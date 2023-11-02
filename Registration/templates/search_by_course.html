@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>By Student</title>
+    <style>
+        body{
+            background-color: ;
+        }
+    </style>
+</head>
+<body>
+    <h1>KOLEJ PROFESIONAL MARA BERANANG</h1>
+    <h2><strong> SEARCH BY STUDENT</h2><br><strong>
+
+
+    <form action="search_by_course" method="get">
+        Course <select name='s_course'>
+            <option value="">Select One</option>
+            {% for data in value %}
+                <option value={{data.code}}>{{data.description}}</option><!--code bahagian belakang tu boleh ubah ikut kita nak sebab itu untuk display je (data.code/data.description)-->
+            {% endfor %}
+        </select>
+        <input type="submit" value="SEARCH">
+    </form>
+    <br><br>
+    <table>
+        <tr>
+            <caption>List of student {{course}}</caption>
+        </tr>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Status</th>
+        </tr>
+        {%for data in list_student%}
+        <tr>
+            <td>{{data.id}}</td>
+            <td>{{data.name}}</td>
+            <td>{{data.address}}</td>
+            <td>{{data.phone}}</td>
+            <td>{{data.status}}</td>
+        </tr>
+        {% endfor%}
+    </table>
+    <br><br>
+    <a href="{% url 'index' %}">Home</a>
+    
+</body>
+</html>

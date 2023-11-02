@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course</title>
+    <style>
+        body{
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h1>WELCOME TO KOLEJ PROFESIONAL MARA BERANANG</h1>
+    <strong> UPDATE COURSE</strong><br><br>
+
+
+    <form action="save_update_course/{{data.code}}" method="post">
+        {% csrf_token %}
+             Course Code:
+            <input type="text" name="code" value="{{data.code}}" disable="False"><br><br>
+            Course Description : <input type="text" name="description" value="{{data.description}}"><br><br><br>
+            <input type="submit" value="UPDATE">
+
+    </form>
+    <br><br><br>
+    <!--{{message}}!-->
+    <br><br>
+    <a href="{%url 'course'%}">Back</a>
+    
+</body>
+</html>

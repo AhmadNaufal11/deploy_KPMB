@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOLEJ PROFESIONAL MARA BERANANG</title>
+    <style>
+        h1{
+            color: blue;
+        }
+        body{
+            background-color: lightgreen;
+        }
+        table,tr,td,th{border: solid}
+    </style>
+</head>
+<body>
+    <h1>KOLEJ PROFESIONAL MARA BERANANG</h1>
+    <h2>COURSE</h2>
+
+    <table>
+        <tr>
+            <th>CODE</th>
+            <th>DESCRIPTION</th>
+            <th>UPDATE</th>
+            <th>DELETE</th>
+        </tr>
+        {% for data in allcourse%}
+            <tr>
+                <td>{{data.code}}</td>
+                <td>{{data.description}}</td>
+                <td><a href="update_course/{{data.code}}">Update</a></td>
+                <td><a href="delete_course/{{data.code}}">Delete</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+    <br><br>
+    <a href="new_course">New Course</a>
+    <br>
+    <a href="{% url 'index' %}">Home</a>
+    
+</body>
+</html>

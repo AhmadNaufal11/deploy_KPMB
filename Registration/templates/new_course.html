@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course</title>
+    <style>
+        body{
+            background-color: violet;
+        }
+    </style>
+</head>
+<body>
+    <h1>KOLEJ PROFESIONAL MARA BERANANG</h1>
+    <strong> COURSE</strong><br><br>
+
+
+    <form action="new_course" method="post">
+        {% csrf_token %}
+            Course code:
+            <input name="code">
+            <br><br>
+            Description:
+            <input name="desc">
+            <br><br>
+            <input type="submit" value="save">
+
+    </form>
+    <br><br>
+    {{message}}
+    <a href="/kpmb/course/">Back</a>
+    
+</body>
+</html>

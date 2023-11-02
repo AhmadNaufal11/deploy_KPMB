@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course</title>
+    <style>
+        body{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>KOLEJ PROFESIONAL MARA BERANANG</h1>
+    <strong> NEW Student</strong><br><br>
+
+
+    <form action="" method="post">
+        {% csrf_token %}
+            ID:<input type="text" name="Id">
+            <br><br>
+            Name:<input type="text" name="Name">
+            <br><br>
+            Address:<input type="text" name="Address">
+            <br><br>
+            Phone:<input type="text" name="Phone">
+            <br><br>
+            Course<select name='s_course'>
+                <option value="">Select One</option>
+                {% for data in Course %}
+                    <option value={{data.code}}>{{data.description}}</option><!--code bahagian belakang tu boleh ubah ikut kita nak sebab itu untuk display je (data.code/data.description)-->
+                {% endfor %}
+            </select>
+            <br><br>
+            <input type="submit" value="SAVE">
+
+    </form>
+
+    <br><br>
+    {{message}}
+    <br>
+    <a href="\kpmb">Home</a>
+    
+</body>
+</html>

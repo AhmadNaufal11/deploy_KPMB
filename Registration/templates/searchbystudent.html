@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>By Student</title>
+    <style>
+        body{
+            background-color: ;
+        }
+    </style>
+</head>
+<body>
+    <h1>KOLEJ PROFESIONAL MARA BERANANG</h1>
+    <h2> SEARCH BY STUDENT</h2><br>
+
+
+    <form action="searchbystudent" method="post">
+        {% csrf_token %}
+            ID:
+            <input name="id">
+            <input type="submit" value="SEARCH">
+    </form>
+    <br><br>
+    ID: {{student_data.id}}<br><br>
+    Name: {{student_data.name}}<br><br>
+    Address: {{student_data.address}}<br><br>
+    Phone: {{student_data.phone}}<br><br>
+    Course: {{student_data.course_code_id}}<br><br>
+    Description: {{course_data.description}}<br><br>
+    Status: {{student_data.status}}<br><br>
+    message: {{message}}
+    <br><br>
+    <a href="{% url 'index' %}">Home</a>
+    
+</body>
+</html>
